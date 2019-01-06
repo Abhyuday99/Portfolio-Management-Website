@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Transactions
+{% endblock %}
+
+{% block main %}
+        <table align = "center">
+            <tbody>
+                <tr>
+                    <th> Stock Symbol </th>
+                    <th> Price </th>
+                    <th>  Number </th>
+                    <th> Time of Transaction</th>
+                    <th> Transaction Type </th>
+                </tr>
+                {% for row in History %}
+                <tr>
+                    <td> {{row["StockTicker"]}} </td>
+                    <td> {{row["StockPrice"]}} </td>
+                    <td> {{row["NumberofStocks"]}} </td>
+                    <td> {{row["Time"]}} </td>
+                    <td> {{row["BUYorSELL"]}} </td>
+                </tr>
+                {% endfor %}
+{% endblock %}

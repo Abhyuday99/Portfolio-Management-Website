@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks Now !
+{% endblock %}
+
+{% block main %}
+    <form action = "/sell" method = "post">
+        <div class = "form-group">
+            <select name = "symbol">
+                {% for row in List %}
+                <option value =  "{{row["StockTicker"]}}" > {{ row["StockTicker"] }}</option>
+                {% endfor %}
+        </div>
+        <div class = "form-group">
+        <input autocomplete = "off" name = "shares" type = "number" placeholder = "Number of Shares" />
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

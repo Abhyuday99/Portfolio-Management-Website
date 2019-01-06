@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Welcome !!
+{% endblock %}
+
+{% block main %}
+        <table align = "center">
+            <tbody>
+                <tr>
+                    <th> Stock Symbol </th>
+                    <th> Number </th>
+                    <th>  Price </th>
+                    <th> Total Value </th>
+                </tr>
+                {% for x,y,z,w in X %}
+                <tr>
+                    <td> {{x}} </td>
+                    <td> {{y}}</td>
+                    <td> ${{z | usd}} </td>
+                    <td> ${{w | usd }} </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <hr>
+        <hr>
+        <p align = "center" font size = 28px ><b> Total cash = ${{cash}}</b></p>
+        <p align = "center" font size = 42px ><b> Cash + Equity(Total) = ${{Equity}}</b></p>
+{% endblock %}
